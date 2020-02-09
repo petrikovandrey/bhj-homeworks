@@ -4,8 +4,16 @@ for (let i = 0; i < menu_link.length; i++) {
 }
 
 function clickMenu() {
-    if(this.nextElementSibling) {
-        this.className = "menu menu_sub menu_active";
-        this.onclick.preventDefault();
+    if (this.nextElementSibling) {
+        clearClassActive();
+        this.nextElementSibling.className = "menu menu_sub menu_active";      
+        return false;
     }
+}
+
+function clearClassActive() {
+     let activeMenus = document.getElementsByClassName("menu_active");
+     for (let index = 0; index < activeMenus.length; index++) {
+        activeMenus[index].className = "menu menu_sub";
+     }
 }

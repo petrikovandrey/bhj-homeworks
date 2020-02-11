@@ -17,25 +17,19 @@ class Game {
   }
 
   registerEvents() {
-    /*
-      TODO:
-      Написать обработчик события, который откликается
-      на каждый введённый символ.
-      В случае правильного ввода слова вызываем this.success()
-      При неправильном вводе символа - this.fail();
-     */
     this.currentSymbol = document.querySelector(".symbol_current").textContent;
 
     let isCorrect = document.addEventListener("keypress", function (e) {
-      if(this.currentSymbol = e.key) {
+      if (this.currentSymbol = e.key) {
         this.success();
       } else {
         this.fail();
       }
     });
 
-   
   }
+
+
 
   success() {
     this.currentSymbol.classList.add('symbol_correct');

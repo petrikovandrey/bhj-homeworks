@@ -5,15 +5,21 @@ for (let i = 0; i < menu_link.length; i++) {
 
 function clickMenu() {
     if (this.nextElementSibling) {
-        clearClassActive();
-        this.nextElementSibling.className = "menu menu_sub menu_active";      
+        if (this.nextElementSibling === document.getElementsByClassName("menu_active")[0]) {
+            this.nextElementSibling.className = "menu menu_sub";
+            return false;
+        } else {
+            clearClassActive();
+        }
+        this.nextElementSibling.className = "menu menu_sub menu_active";
         return false;
     }
 }
 
 function clearClassActive() {
-     let activeMenus = document.getElementsByClassName("menu_active");
-     for (let index = 0; index < activeMenus.length; index++) {
+    let activeMenus = document.getElementsByClassName("menu_active");
+    for (let index = 0; index < activeMenus.length; index++) {
         activeMenus[index].className = "menu menu_sub";
-     }
+    }
 }
+

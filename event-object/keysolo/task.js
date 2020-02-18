@@ -18,18 +18,15 @@ class Game {
 
   registerEvents() {
     this.currentSymbol = document.querySelector(".symbol_current").textContent;
-
-    let isCorrect = document.addEventListener("keypress", function (e) {
+    document.addEventListener("keypress", function (e) {
+      console.log(e.key)
       if (this.currentSymbol = e.key) {
         this.success();
       } else {
         this.fail();
-      }
+      };
     });
-
   }
-
-
 
   success() {
     this.currentSymbol.classList.add('symbol_correct');
@@ -91,5 +88,13 @@ class Game {
   }
 }
 
+function press(e) {
+  if (this.currentSymbol = e.key) {
+    console.log(this.currentSymbol);
+    this.success();
+  } else {
+    this.fail();
+  }
+}
 new Game(document.getElementById('game'))
 

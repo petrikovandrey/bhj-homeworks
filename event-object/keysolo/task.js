@@ -17,10 +17,9 @@ class Game {
   }
 
   registerEvents() {
-    this.currentSymbol = document.querySelector(".symbol_current").textContent;
-    document.addEventListener("keypress", function (e) {
-      console.log(e.key)
-      if (this.currentSymbol = e.key) {
+    this.currentSymbol = document.querySelector(".symbol_current");
+    document.addEventListener("keypress", (e) => {
+      if (this.currentSymbol.textContent === e.key) {
         this.success();
       } else {
         this.fail();
@@ -88,13 +87,5 @@ class Game {
   }
 }
 
-function press(e) {
-  if (this.currentSymbol = e.key) {
-    console.log(this.currentSymbol);
-    this.success();
-  } else {
-    this.fail();
-  }
-}
 new Game(document.getElementById('game'))
 

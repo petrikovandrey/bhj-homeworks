@@ -19,7 +19,8 @@ class Game {
   registerEvents() {
     this.currentSymbol = document.querySelector(".symbol_current");
     document.addEventListener("keypress", (e) => {
-      if (this.currentSymbol.textContent === e.key) {
+
+      if (this.currentSymbol.textContent.toLowerCase() === e.key.toLowerCase()) {
         this.success();
       } else {
         this.fail();

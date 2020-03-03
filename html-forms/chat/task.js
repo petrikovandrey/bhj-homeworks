@@ -39,7 +39,7 @@ function answerBot() {
     let h = new Date().getHours();
     let m = new Date().getMinutes();
     time = `${h}:${m}`;
-    let i = Math.floor(Math.random() * 4);
+    let i = Math.floor(Math.random() * 6);
     messages.innerHTML += `
     <div class="message">
             <div class="message__time"> ${time} </div>

@@ -8,18 +8,21 @@ for (let index = 0; index < checkBoxes.length; index++) {
 
 function click() {
     let interest = this.closest(".interests_active");
- 
+
     let list;
     if (interest === null) {
         interest = this.closest("li");
         list = interest.querySelectorAll(".interest__check");
-    } else {
-        list = interest.parentElement.querySelectorAll(".interest__check");
-    }
-  
-    list.forEach(element => {
-        if (this != element) {
-            element.checked = !element.checked;
-        }
-    });
+        list.forEach(element => {
+            if (this != element) {
+                element.checked = !element.checked;
+            }
+        });
+    } 
+    // else {
+    //     list = interest.parentElement.querySelector(".interest__check");
+
+    // }
+
+
 }

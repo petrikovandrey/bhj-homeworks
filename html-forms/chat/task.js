@@ -23,7 +23,7 @@ widget.addEventListener("keydown", function (e) {
         let m = new Date().getMinutes();
         time = `${h}:${m}`;
         messages.innerHTML += `
-        <div class="message">
+        <div class="message message_client">
             <div class="message__time"> ${time} </div>
             <div class="message__text">
                 ${textCont}

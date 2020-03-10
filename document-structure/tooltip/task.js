@@ -8,13 +8,17 @@ div.className = "tooltip";
 div.innerText = "";
 
 function click(e) {
-    
     e.preventDefault();
-    let x = e.clientX;
-    let y = e.clientY;
-
+    let child = this.querySelector(".tooltip");
+    console.log(child);
+    if(child != null) {
+        this.removeChild(child);
+        return;
+    }
+   
     div.innerText = this.title;
-    div.style.cssText = `display: inline; left: ${x}px; top: ${y}px;`;
+    let c = this.getBoundingClientRect();
+    div.style.cssText = `display: inline; left: ${c.x}px; top: ${c.y}px;`;
 
     this.appendChild(div);
   
